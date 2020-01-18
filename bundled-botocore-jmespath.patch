@@ -1,0 +1,274 @@
+diff -uNr a/boto3/compat.py b/boto3/compat.py
+--- a/boto3/compat.py	2017-08-12 01:38:50.000000000 +0200
++++ b/boto3/compat.py	2018-02-12 16:07:04.150325256 +0100
+@@ -15,6 +15,7 @@
+ import errno
+ import socket
+ 
++sys.path.insert(0, '/usr/lib/fence-agents/bundled')
+ from botocore.vendored import six
+ 
+ if six.PY3:
+diff -uNr a/boto3/docs/action.py b/boto3/docs/action.py
+--- a/boto3/docs/action.py	2017-08-12 01:38:50.000000000 +0200
++++ b/boto3/docs/action.py	2018-02-12 16:07:04.150325256 +0100
+@@ -10,6 +10,8 @@
+ # distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+ # ANY KIND, either express or implied. See the License for the specific
+ # language governing permissions and limitations under the License.
++import sys
++sys.path.insert(0, '/usr/lib/fence-agents/bundled')
+ from botocore import xform_name
+ from botocore.model import OperationModel
+ from botocore.utils import get_service_module_name
+diff -uNr a/boto3/docs/attr.py b/boto3/docs/attr.py
+--- a/boto3/docs/attr.py	2017-08-12 01:38:50.000000000 +0200
++++ b/boto3/docs/attr.py	2018-02-12 16:07:04.150325256 +0100
+@@ -10,6 +10,8 @@
+ # distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+ # ANY KIND, either express or implied. See the License for the specific
+ # language governing permissions and limitations under the License.
++import sys
++sys.path.insert(0, '/usr/lib/fence-agents/bundled')
+ from botocore.docs.params import ResponseParamsDocumenter
+ 
+ from boto3.docs.utils import get_identifier_description
+diff -uNr a/boto3/docs/base.py b/boto3/docs/base.py
+--- a/boto3/docs/base.py	2017-08-12 01:38:50.000000000 +0200
++++ b/boto3/docs/base.py	2018-02-12 16:07:04.151325242 +0100
+@@ -10,6 +10,8 @@
+ # distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+ # ANY KIND, either express or implied. See the License for the specific
+ # language governing permissions and limitations under the License.
++import sys
++sys.path.insert(0, '/usr/lib/fence-agents/bundled')
+ from botocore.compat import OrderedDict
+ 
+ 
+diff -uNr a/boto3/docs/client.py b/boto3/docs/client.py
+--- a/boto3/docs/client.py	2017-08-12 01:38:50.000000000 +0200
++++ b/boto3/docs/client.py	2018-02-12 16:07:04.151325242 +0100
+@@ -10,6 +10,8 @@
+ # distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+ # ANY KIND, either express or implied. See the License for the specific
+ # language governing permissions and limitations under the License.
++import sys
++sys.path.insert(0, '/usr/lib/fence-agents/bundled')
+ from botocore.docs.client import ClientDocumenter
+ 
+ 
+diff -uNr a/boto3/docs/collection.py b/boto3/docs/collection.py
+--- a/boto3/docs/collection.py	2017-08-12 01:38:50.000000000 +0200
++++ b/boto3/docs/collection.py	2018-02-12 16:07:04.151325242 +0100
+@@ -10,6 +10,8 @@
+ # distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+ # ANY KIND, either express or implied. See the License for the specific
+ # language governing permissions and limitations under the License.
++import sys
++sys.path.insert(0, '/usr/lib/fence-agents/bundled')
+ from botocore import xform_name
+ from botocore.docs.method import get_instance_public_methods
+ from botocore.docs.utils import DocumentedShape
+diff -uNr a/boto3/docs/docstring.py b/boto3/docs/docstring.py
+--- a/boto3/docs/docstring.py	2017-08-12 01:38:50.000000000 +0200
++++ b/boto3/docs/docstring.py	2018-02-12 16:07:04.152325229 +0100
+@@ -10,6 +10,8 @@
+ # distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+ # ANY KIND, either express or implied. See the License for the specific
+ # language governing permissions and limitations under the License.
++import sys
++sys.path.insert(0, '/usr/lib/fence-agents/bundled')
+ from botocore.docs.docstring import LazyLoadedDocstring
+ 
+ from boto3.docs.action import document_action
+diff -uNr a/boto3/docs/method.py b/boto3/docs/method.py
+--- a/boto3/docs/method.py	2017-08-12 01:38:50.000000000 +0200
++++ b/boto3/docs/method.py	2018-02-12 16:07:04.152325229 +0100
+@@ -10,6 +10,8 @@
+ # distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+ # ANY KIND, either express or implied. See the License for the specific
+ # language governing permissions and limitations under the License.
++import sys
++sys.path.insert(0, '/usr/lib/fence-agents/bundled')
+ from botocore.docs.method import document_model_driven_method
+ 
+ 
+diff -uNr a/boto3/docs/resource.py b/boto3/docs/resource.py
+--- a/boto3/docs/resource.py	2017-08-12 01:38:50.000000000 +0200
++++ b/boto3/docs/resource.py	2018-02-12 16:07:04.152325229 +0100
+@@ -10,6 +10,8 @@
+ # distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+ # ANY KIND, either express or implied. See the License for the specific
+ # language governing permissions and limitations under the License.
++import sys
++sys.path.insert(0, '/usr/lib/fence-agents/bundled')
+ from botocore import xform_name
+ from botocore.docs.utils import get_official_service_name
+ 
+diff -uNr a/boto3/docs/service.py b/boto3/docs/service.py
+--- a/boto3/docs/service.py	2017-08-12 01:38:50.000000000 +0200
++++ b/boto3/docs/service.py	2018-02-12 16:07:04.152325229 +0100
+@@ -13,6 +13,8 @@
+ import os
+ 
+ import boto3
++import sys
++sys.path.insert(0, '/usr/lib/fence-agents/bundled')
+ from botocore.exceptions import DataNotFoundError
+ from botocore.docs.service import ServiceDocumenter as BaseServiceDocumenter
+ from botocore.docs.bcdoc.restdoc import DocumentStructure
+diff -uNr a/boto3/docs/subresource.py b/boto3/docs/subresource.py
+--- a/boto3/docs/subresource.py	2017-08-12 01:38:50.000000000 +0200
++++ b/boto3/docs/subresource.py	2018-02-12 16:07:04.153325215 +0100
+@@ -10,6 +10,8 @@
+ # distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+ # ANY KIND, either express or implied. See the License for the specific
+ # language governing permissions and limitations under the License.
++import sys
++sys.path.insert(0, '/usr/lib/fence-agents/bundled')
+ from botocore import xform_name
+ from botocore.utils import get_service_module_name
+ 
+diff -uNr a/boto3/docs/utils.py b/boto3/docs/utils.py
+--- a/boto3/docs/utils.py	2017-08-12 01:38:50.000000000 +0200
++++ b/boto3/docs/utils.py	2018-02-12 16:09:30.631298110 +0100
+@@ -12,6 +12,8 @@
+ # language governing permissions and limitations under the License.
+ import inspect
+ 
++import sys
++sys.path.insert(0, '/usr/lib/fence-agents/bundled')
+ import jmespath
+ 
+ from botocore.compat import six
+diff -uNr a/boto3/docs/waiter.py b/boto3/docs/waiter.py
+--- a/boto3/docs/waiter.py	2017-08-12 01:38:50.000000000 +0200
++++ b/boto3/docs/waiter.py	2018-02-12 16:07:04.153325215 +0100
+@@ -10,6 +10,8 @@
+ # distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+ # ANY KIND, either express or implied. See the License for the specific
+ # language governing permissions and limitations under the License.
++import sys
++sys.path.insert(0, '/usr/lib/fence-agents/bundled')
+ from botocore import xform_name
+ from botocore.utils import get_service_module_name
+ from botocore.docs.method import document_model_driven_method
+diff -uNr a/boto3/dynamodb/types.py b/boto3/dynamodb/types.py
+--- a/boto3/dynamodb/types.py	2017-08-12 01:38:50.000000000 +0200
++++ b/boto3/dynamodb/types.py	2018-02-12 16:07:04.154325201 +0100
+@@ -14,6 +14,8 @@
+ from decimal import Decimal, Context, Clamped
+ from decimal import Overflow, Inexact, Underflow, Rounded
+ 
++import sys
++sys.path.insert(0, '/usr/lib/fence-agents/bundled')
+ from botocore.compat import six
+ 
+ 
+diff -uNr a/boto3/exceptions.py b/boto3/exceptions.py
+--- a/boto3/exceptions.py	2017-08-12 01:38:50.000000000 +0200
++++ b/boto3/exceptions.py	2018-02-12 16:07:04.154325201 +0100
+@@ -12,6 +12,8 @@
+ # language governing permissions and limitations under the License.
+ 
+ # All exceptions in this class should subclass from Boto3Error.
++import sys
++sys.path.insert(0, '/usr/lib/fence-agents/bundled')
+ import botocore.exceptions
+ 
+ 
+diff -uNr a/boto3/resources/action.py b/boto3/resources/action.py
+--- a/boto3/resources/action.py	2017-08-12 01:38:50.000000000 +0200
++++ b/boto3/resources/action.py	2018-02-12 16:07:04.154325201 +0100
+@@ -13,6 +13,8 @@
+ 
+ import logging
+ 
++import sys
++sys.path.insert(0, '/usr/lib/fence-agents/bundled')
+ from botocore import xform_name
+ 
+ from .params import create_request_parameters
+diff -uNr a/boto3/resources/collection.py b/boto3/resources/collection.py
+--- a/boto3/resources/collection.py	2017-08-12 01:38:50.000000000 +0200
++++ b/boto3/resources/collection.py	2018-02-12 16:07:04.155325187 +0100
+@@ -14,6 +14,8 @@
+ import copy
+ import logging
+ 
++import sys
++sys.path.insert(0, '/usr/lib/fence-agents/bundled')
+ from botocore import xform_name
+ from botocore.utils import merge_dicts
+ 
+diff -uNr a/boto3/resources/model.py b/boto3/resources/model.py
+--- a/boto3/resources/model.py	2017-08-12 01:38:50.000000000 +0200
++++ b/boto3/resources/model.py	2018-02-12 16:07:04.155325187 +0100
+@@ -25,6 +25,8 @@
+ 
+ import logging
+ 
++import sys
++sys.path.insert(0, '/usr/lib/fence-agents/bundled')
+ from botocore import xform_name
+ 
+ 
+diff -uNr a/boto3/resources/params.py b/boto3/resources/params.py
+--- a/boto3/resources/params.py	2017-08-12 01:38:50.000000000 +0200
++++ b/boto3/resources/params.py	2018-02-12 16:09:21.232428180 +0100
+@@ -13,6 +13,8 @@
+ 
+ import re
+ 
++import sys
++sys.path.insert(0, '/usr/lib/fence-agents/bundled')
+ import jmespath
+ from botocore import xform_name
+ 
+diff -uNr a/boto3/resources/response.py b/boto3/resources/response.py
+--- a/boto3/resources/response.py	2017-08-12 01:38:50.000000000 +0200
++++ b/boto3/resources/response.py	2018-02-12 16:09:10.607575218 +0100
+@@ -11,6 +11,8 @@
+ # ANY KIND, either express or implied. See the License for the specific
+ # language governing permissions and limitations under the License.
+ 
++import sys
++sys.path.insert(0, '/usr/lib/fence-agents/bundled')
+ import jmespath
+ from botocore import xform_name
+ 
+diff -uNr a/boto3/s3/inject.py b/boto3/s3/inject.py
+--- a/boto3/s3/inject.py	2017-08-12 01:38:50.000000000 +0200
++++ b/boto3/s3/inject.py	2018-02-12 16:07:04.156325173 +0100
+@@ -10,6 +10,8 @@
+ # distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+ # ANY KIND, either express or implied. See the License for the specific
+ # language governing permissions and limitations under the License.
++import sys
++sys.path.insert(0, '/usr/lib/fence-agents/bundled')
+ from botocore.exceptions import ClientError
+ 
+ from boto3.s3.transfer import create_transfer_manager
+diff -uNr a/boto3/s3/transfer.py b/boto3/s3/transfer.py
+--- a/boto3/s3/transfer.py	2017-08-12 01:38:50.000000000 +0200
++++ b/boto3/s3/transfer.py	2018-02-12 16:07:04.156325173 +0100
+@@ -122,6 +122,7 @@
+ 
+ 
+ """
++sys.path.insert(0, '/usr/lib/fence-agents/bundled')
+ from botocore.exceptions import ClientError
+ from botocore.compat import six
+ from s3transfer.exceptions import RetriesExceededError as \
+diff -uNr a/boto3/session.py b/boto3/session.py
+--- a/boto3/session.py	2017-08-12 01:38:50.000000000 +0200
++++ b/boto3/session.py	2018-02-12 16:07:04.156325173 +0100
+@@ -14,6 +14,8 @@
+ import copy
+ import os
+ 
++import sys
++sys.path.insert(0, '/usr/lib/fence-agents/bundled')
+ import botocore.session
+ from botocore.client import Config
+ from botocore.exceptions import DataNotFoundError, UnknownServiceError

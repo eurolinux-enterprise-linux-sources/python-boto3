@@ -11,7 +11,7 @@
 
 Name:           python-%{pypi_name}
 Version:        1.4.6
-Release:        4%{?dist}
+Release:        4%{?dist}.1
 Summary:        The AWS SDK for Python
 
 License:        ASL 2.0
@@ -113,6 +113,11 @@ rm -rf tests/integration
 %endif # with python3
 
 %changelog
+* Thu May 24 2018 Oyvind Albrigtsen <oalbrigt@redhat.com> - 1.4.6-4.1
+- Fix missing "import sys" in s3/transfer.py
+
+  Resolves: rhbz#1581764
+
 * Mon Feb 12 2018 Oyvind Albrigtsen <oalbrigt@redhat.com> - 1.4.6-4
 - Append python-botocore and python-jmespath bundled directories to
   search path where needed
